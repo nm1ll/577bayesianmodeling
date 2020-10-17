@@ -1,0 +1,23 @@
+model{
+	for(i in 1:n){
+		bcarot[i] ~ dnorm( mu[i] , tau_bc )
+		mu[i] <- inprod( x[i,], beta[] ) + gamma[ ptid[i] ]
+	}
+	for(j in 1:n_patients){
+		gamma[j] ~ dnorm( 0, tau_g )
+	}
+	for(k in 1:n_covariates){
+		beta[k] ~ dnorm( 0, tau_b )
+	}
+
+
+	a ~ dnorm(0, pow(scale_bc, -2))
+	b ~ dnorm(0, pow(scale_g, -2))
+	a2 ~ dgamma(.5, .5)
+	b2 ~ dgamma(.5, .5)
+	tau_bc <- sqrt(a2)/a
+	tau_g <- sqrt(b2)/b
+
+	
+
+}
