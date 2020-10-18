@@ -1,4 +1,4 @@
-# UNM's Statistics 577 - Introduction to Bayesian Modeling
+# Statistics 577 - Introduction to Bayesian Modeling
 ## Final Project
 
 The primary aim of the analysis is to quantify the effect of beta-carotene treatment on serum beta-carotene levels over time.
